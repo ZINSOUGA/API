@@ -117,7 +117,7 @@ app.post("/login", async (req, res) => {
   
   // ...
 
-  app.post("/welcome", auth, (req, res) => {
+  app.post("/users/welcome", auth, (req, res) => {
     return res.status(200).send("Welcome 🙌 ");
   });
 
@@ -137,7 +137,7 @@ app.post("/login", async (req, res) => {
     }
   }),
 
-  app.get('/:id', async (req, res, next) => {
+  app.get('/users/:id', async (req, res, next) => {
     const { id } = req.params;
 
     try {
@@ -153,7 +153,7 @@ app.post("/login", async (req, res) => {
     }
 }),
 
-app.patch('/update', async (req, res, next) => {
+app.patch('users/update', async (req, res, next) => {
     const temp = {};
 
     ({ 
@@ -182,7 +182,7 @@ app.patch('/update', async (req, res, next) => {
     }
 }),
 
-app.delete('/delete', async (req, res, next) => {
+app.delete('users/delete', async (req, res, next) => {
     const { id } = req.body;
 
     try {
@@ -224,8 +224,7 @@ try {
 }),
 
 
-app.get('/pub', async (req, res, next) => {
-
+app.get("/posts", async (req, res) => {
   try {
       let posts = await Post.find();
 
