@@ -153,7 +153,7 @@ app.post("/login", async (req, res) => {
     }
 }),
 
-app.patch('users/update', async (req, res, next) => {
+app.patch('/users/update', async (req, res, next) => {
     const temp = {};
 
     ({ 
@@ -182,7 +182,7 @@ app.patch('users/update', async (req, res, next) => {
     }
 }),
 
-app.delete('users/delete', async (req, res, next) => {
+app.delete('/delete/users', async (req, res, next) => {
     const { id } = req.body;
 
     try {
